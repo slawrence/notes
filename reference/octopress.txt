@@ -1,0 +1,14 @@
+rake rsync (deploy via rsync)
+rake list (list all the tasks)
+rake -D (more task details)
+
+Make a post:
+rake new_post["title"] #creates a file in _posts/date-title.markdown 
+(note: set property published: false until its ready for deployment)
+
+Basic Workflow
+
+rake generate
+rake rsync (or rake deploy)
+
+Files are stored in 

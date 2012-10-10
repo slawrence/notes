@@ -1,0 +1,21 @@
+.end() - returns you to the original set of items
+
+$('selector')
+    .find('something')
+    .css("color", "red")
+.end()
+    .find('something else')
+    .css("color", "green");
+
+.toArray() - converts the set of matched elements to a plain Javascript Array
+
+.endSelf() - adds the previous set of matched elements to the stack (e.g. useful after a find() operation)
+
+console.log( $(“div”) ); // [ div ]
+console.log( $( “div” ).find(“p”) ); // [ p ,p, p ]
+console.log( $( “div” ).find(“p”).andSelf() ); // [ div, p, p, p ]
+
+text() and html() accept functions
+difference between the two? text() works for both html and xml documents whereas html() only works for html. Also, html() only gets the first element's content where text() gets all the contents.
+
+

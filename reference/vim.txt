@@ -1,0 +1,80 @@
+VIM Reference
+(^ represents CTRL button)
+
+Basic
+
+:w (Save)
+:wq (save and quit)
+:q! (quit no save)
+:w! (force save of read-only file)
+:w file.txt (save under another file name)
+:w! (save a file that is read only)
+:4,8w! (save line numbers 4 through 8 as the current file)
+:4,8w file.txt (save 4 through 8 as new file)
+:w >> ~/testfile.txt (append current file to end of testfile.txt)
+:4,8w >> ~/anotherfile.txt
+:e! (restore the last saved version of the current file)
+
+Movement
+
+^d ^u (paging)
+^f ^b (fast paging forward, backward)
+10j (move ten rows up, use hjkl)
+30| (move to 30th column)
+0 (jump to first char in line)
+$ (jump to last char in line)
+23G (jump to line 23)
+`` (go back to previous position)
+H (go to top of current screen)
+L (go to bottom of current screen)
+M (go to middle of current screen)
+w (jump to beginning of next word) W is ASCII text
+b (jump backward to previous word) B is ASCII text
+e (jump to end of word) E is ASCII text
+12w (jump 12 words)
+( move backward a sentence .. ')' move forward
+{ } move forward/backward paragraphs
+
+Multiple Windows
+
+vi file1.txt file2.txt
+vi *.txt
+:ls (list buffers)
+:bn
+:bp (previous)
+:ZZ (Save and close)
+
+Selection:
+
+vi'  - select everything inside ' ' 
+vi{  - visual, inner {
+
+Multiple Tabs
+
+Ctrl w and w, or hjkl, etc. (Switch windows)
+
+Open other files from within VIM
+
+:e file.txt
+:e ~/reference/vim.txt
+
+Search
+
+/query OR ?query (forward, backward)
+/regexp/
+n (next)
+^ (beginning) $ (end)
+
+Screen Adjustments
+
+z. (center screen on cursor)
+z enter (top)
+z- (bottom)
+
+Miscellaneous 
+
+:= (number of lines in file)
+% (find associated bracket ... if currently selecting one)
+mx (mark, where x is any char A-Z,a-z)
+x` (retrieve mark 'x')
+set invlist  (show invisible chars)
