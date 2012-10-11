@@ -1,0 +1,13 @@
+apache start, stop, restart
+
+sudo apachectl start
+               stop
+               restart
+
+conf files:
+
+/etc/apache2/httpd.conf
+
+system level root:
+
+/Library/WebServer/Documents

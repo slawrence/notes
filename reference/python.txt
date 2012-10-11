@@ -1,0 +1,2 @@
+Start a simple http server
+python -m SimpleHttpServer <port#>
