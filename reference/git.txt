@@ -20,5 +20,24 @@ git push REPOSITORY (where REPOSITORY is either a remote URL or a name of a remo
 
 generally we'll just want to push to origin... which is what is conventually the primary centralized repo (a github account for example)
 
+Pushing after a fresh init:
+
+REMOTE:
+
+ssh into git (ssh -T -p 443 git@github.com)
+mkdir my_project.git
+cd my_project.git
+git init --bare
+exit
+
+LOCAL:
+
+git init
+git add *
+git commit -m 'initial commit'
+git remote add origin git@example.com:my_project.git
+git push -u origin master
+
+
 git remote (show's what's configured as remote repos)
 git remote show origin (shows more info about a particular repo ... origin in this case)
