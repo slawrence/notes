@@ -78,3 +78,6 @@ Miscellaneous
 mx (mark, where x is any char A-Z,a-z)
 x` (retrieve mark 'x')
 set invlist  (show invisible chars)
+gg=G #Format code
+:noh #remove highlighting for searches
+m    #node tree options (add, remove, etc.)
