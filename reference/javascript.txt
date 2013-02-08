@@ -1,5 +1,0 @@
-Javascript notes:
-
-(object === null) only returns true if object is null
-(object == null) returns true if null or undefined
-
