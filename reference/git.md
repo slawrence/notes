@@ -1,29 +1,48 @@
 Git Notes
 =================
 
-`git add -n .` dry run is -n option
+## Basic Workflow
 
-### exclude file:
-.git/info/exclude
+1. 'Git' a repo
+    * Clone `git clone <REPO-URL>`
+    * Checkout `git checkout`
+    * Init `git init` (inside directory)
 
-### removing added files:
-`git rm --cached FILE` (don't forget the cached!)
+2. Make modifications
+    * Add modifications to staging `git add <FILE>` or `git add .` (all)
+    * Remove
+        * Stage file removal `git rm <FILE>`
+        * Remove from staging `git rm --cached <FILE>`
+    * Moving `git mv <OLD> <NEW>`
 
-## git workflow:
+3. Commit
+    * Commit with message `git commit -m 'Commit Message'`
+    * Commit without staging `git commit -am 'Committing msg'` (Adds all untracked content to staging)
 
-`git clone http://git.something.org/project/title.git` (checks out master branch)
+3. Check Status/Log
+    * `git status`
+    * `git diff` or `git diff --staged` View differences between untracked & staged, or staged and local
+    * `git log` Check history (-p shows diff, -2 shows last two entries, --stat)
+        * Options
+            * -p shows diff
+            * -2 shows last two entries
+            * `--stat`
+            * `--pretty=oneline`
+                * also `--pretty=format:"%cd %s %cn"` (commiter date, subject and committer name)
+            * `--graph`
 
-`git add <FILES>` (use . for all, git add -n FILES for mock)
+4. Pushing/Syncing with another rep
 
-`git status`
+    * `git push REPOSITORY` (where REPOSITORY is either a remote URL or a name of a remote, which are specified in GIT/config, GIT/remotes, or GIT/branches)
 
-`git commit -m "message text"` (local commit)
+## Most Used options/commands
 
-Make sure SSH is setup (add public key to the repo, private in local .ssh folder)
+* `git add -n .` dry run is -n option
 
-`git push REPOSITORY` (where REPOSITORY is either a remote URL or a name of a remote, which are specified in GIT/config, GIT/remotes, or GIT/branches)
+### Ignoring files
 
-generally we'll just want to push to origin... which is what is conventually the primary centralized repo (a github account for example)
+* .git/info/exclude
+* .gitignore
 
 ## Pushing after a fresh init:
 
@@ -46,3 +65,7 @@ LOCAL:
 
 * `git remote` (show's what's configured as remote repos)
 * `git remote show origin` (shows more info about a particular repo ... origin in this case)
+
+## Misc
+
+* `gitk` git ui visualizer
