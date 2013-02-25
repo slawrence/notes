@@ -1,0 +1,22 @@
+5678
+1234
+
+## Multiplication 3 ways
+    1. Traditional grade school
+    2. Recursive
+    3. Recursive #2 (karatsuba)
+
+## Topics:
+
+* Divide and Conquer algorithm design paradigm
+* Randomization in algorithm design
+* Primitives for reasoning about graphs
+* Use and implementation of data structures
+    * Balanced binary search trees
+    * Hashtables/Hashmaps
+
+Math - free reference on web: Mathematics for Computer Science by Eric Lehman and Tom Leighton
+
+Also free on web:
+Algorithms, 2006 (Dasgupta/Papadimitriou/Vazirani)
+Data Structures and Algorithms: The Basic Toolbox (Mehlhorn/Sanders), 2008
