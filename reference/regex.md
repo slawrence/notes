@@ -67,3 +67,38 @@ It also creates a capture, which can be backreferenced. The notation for a back 
 
 * `/<(\w+)>(.+)<\/\1>/` will match `<div>anything</div>`
 
+## Global/Local match
+
+* When using `match` with a regex, output differs depending on if a global flag is specified. By default, a local expression will return an array where the first position is the single matched string and the following entries are the captures (if any) specified in the expression. When a global flag is specified, all the array elements are the matched strings. In order to get the captures when using a global flag, use the `exec` function on the regex within a while loop:
+
+`while(match = reg.exec(string) !== null)`
+
+## Using back references in `replace`
+
+* `"fontFamily".replace(/([A-X])/g, "-$1")` converts camel case into dot notation (`font-family`)
+
+## Indicating a non capturing group
+
+Parenthesis performs double duty as a grouping mechanism for operations and specifying captures. To use only as a grouping mechanism, in order to not have to sort through needless captures, a `?:` can be added right after the opening parenthesis:
+
+* `var pattern = /((?:ninja-)+)sword/;`
+
+## Replace with function
+
+`replace` can use a function as its second argument to provide to determine the replacement at runtime. The following converts dash delimited strings to a camel case equivalent:
+
+    "border-bottom-width".replace(/-(\w)/g, function (all, letter) {
+        return letter.toUpperCase();
+    });
+
+This functionality can replace the `exec()` in a while loop technique. Pages 169/170 in JS Ninja document several techniques using replace to trim a string.
+
+## Matching newlines in JS
+
+It's often desirable to use the `.` (period) to match new lines. In js there isn't a flag to allow the operator to include newlines. This is optimally done using the following pattern:
+
+* Example string: "<span>hello</span>\n<b>world</b>";
+* This doesn't match newlines: `/.*/.exec(string)` -> "<span>hello</span>"
+* This does: `/[\S\s]*/.exec(string)` -> "<span>hello</span>\n<b>world</b>"
+
+

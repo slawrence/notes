@@ -15,11 +15,18 @@ Git Notes
         * Remove from staging `git rm --cached <FILE>`
     * Moving `git mv <OLD> <NEW>`
 
-3. Commit
+3. Branching
+    * View branches `git branch`
+    * Create `git branch new_branch_name`
+    * merging another branch with current branch `git merge another_branch`
+    * Deleting a branch that's fully merged 'git branch -d branch_name'
+    * Deleting a branch that's not ... getting rid of branch changes `git branch -D branch_name`
+
+4. Commit
     * Commit with message `git commit -m 'Commit Message'`
     * Commit without staging `git commit -am 'Committing msg'` (Adds all untracked content to staging)
 
-3. Check Status/Log
+5. Check Status/Log
     * `git status`
     * `git diff` or `git diff --staged` View differences between untracked & staged, or staged and local
     * `git log` Check history (-p shows diff, -2 shows last two entries, --stat)
@@ -31,13 +38,24 @@ Git Notes
                 * also `--pretty=format:"%cd %s %cn"` (commiter date, subject and committer name)
             * `--graph`
 
-4. Pushing/Syncing with another rep
+6. Pushing/Syncing with another rep
 
     * `git push REPOSITORY` (where REPOSITORY is either a remote URL or a name of a remote, which are specified in GIT/config, GIT/remotes, or GIT/branches)
 
 ## Most Used options/commands
 
 * `git add -n .` dry run is -n option
+
+### Making changes in a submodule, committing it, and updating the main git repo
+
+1. Make sure on proper branch `git branch` or change to master
+2. Make modifications in submodule code (merge into master branch if forgot step 1)
+3. Add and commit changes
+4. `git push`
+5. Got to main git repo
+6. `git add /path/to/sub`
+7. `git commit -m "Updated commit reference"`
+8. `git push`
 
 ### Ignoring files
 
