@@ -1,6 +1,17 @@
 Nanoc Notes
 ============
 
+### Setup
+
+adsf is required for `nanoc view` and kramdown is for markdown
+
+    git clone http://github.com/slawrence/blog.git
+    cd blog
+    gem install nanoc
+    gem install adsf
+    gem install kramdown
+
+
 ### Basic workflow
 
 1. `rake new_post['Title_of_Post']`
