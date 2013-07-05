@@ -32,6 +32,7 @@ MySQL Notes
 
 * `DELETE from table where column = 'value'`
 * Delete everything but some condition: `DELETE from table where column <> 'value'`
+* Delete an entire table quickly: `TRUNCATE TABLE table_name`
 
 ## Metrics
 

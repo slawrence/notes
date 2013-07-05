@@ -87,3 +87,4 @@ LOCAL:
 ## Misc
 
 * `gitk` git ui visualizer
+* `git config --global url."https://".insteadOf git://` - Useful when behind a HTTP proxy that denies git:// requests
