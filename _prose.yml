@@ -1,0 +1,7 @@
+prose:
+  rooturl: 'reference'
+  media: 'media'
+  ignore:
+    - _config.yml
+    - /_layouts
+    - /_includes
